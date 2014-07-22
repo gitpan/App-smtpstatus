@@ -1,17 +1,258 @@
 NAME
-    App::smtpstatus - List STMP statuses
+    App::smtpstatus - List SMTP statuses
 
 VERSION
-    version 0.01
+    This document describes version 0.02 of App::smtpstatus (from Perl
+    distribution App-smtpstatus), released on 2014-07-22.
+
+FUNCTIONS
+  list_smtp_statuses(%args) -> [status, msg, result, meta]
+    List SMTP statuses.
+
+    REPLACE ME
+
+    Arguments ('*' denotes required arguments):
+
+    *   code => *str*
+
+        Only return records where the 'code' field equals specified value.
+
+    *   code.contains => *str*
+
+        Only return records where the 'code' field contains specified text.
+
+    *   code.in => *array*
+
+        Only return records where the 'code' field is in the specified
+        values.
+
+    *   code.is => *str*
+
+        Only return records where the 'code' field equals specified value.
+
+    *   code.isnt => *str*
+
+        Only return records where the 'code' field does not equal specified
+        value.
+
+    *   code.max => *str*
+
+        Only return records where the 'code' field is less than or equal to
+        specified value.
+
+    *   code.min => *str*
+
+        Only return records where the 'code' field is greater than or equal
+        to specified value.
+
+    *   code.not_contains => *str*
+
+        Only return records where the 'code' field does not contain
+        specified text.
+
+    *   code.not_in => *array*
+
+        Only return records where the 'code' field is not in the specified
+        values.
+
+    *   code.xmax => *str*
+
+        Only return records where the 'code' field is less than specified
+        value.
+
+    *   code.xmin => *str*
+
+        Only return records where the 'code' field is greater than specified
+        value.
+
+    *   description => *str*
+
+        Only return records where the 'description' field equals specified
+        value.
+
+    *   description.contains => *str*
+
+        Only return records where the 'description' field contains specified
+        text.
+
+    *   description.in => *array*
+
+        Only return records where the 'description' field is in the
+        specified values.
+
+    *   description.is => *str*
+
+        Only return records where the 'description' field equals specified
+        value.
+
+    *   description.isnt => *str*
+
+        Only return records where the 'description' field does not equal
+        specified value.
+
+    *   description.max => *str*
+
+        Only return records where the 'description' field is less than or
+        equal to specified value.
+
+    *   description.min => *str*
+
+        Only return records where the 'description' field is greater than or
+        equal to specified value.
+
+    *   description.not_contains => *str*
+
+        Only return records where the 'description' field does not contain
+        specified text.
+
+    *   description.not_in => *array*
+
+        Only return records where the 'description' field is not in the
+        specified values.
+
+    *   description.xmax => *str*
+
+        Only return records where the 'description' field is less than
+        specified value.
+
+    *   description.xmin => *str*
+
+        Only return records where the 'description' field is greater than
+        specified value.
+
+    *   detail => *bool* (default: 0)
+
+        Return array of full records instead of just ID fields.
+
+        By default, only the key (ID) field is returned per result entry.
+
+    *   fields => *array*
+
+        Select fields to return.
+
+    *   q => *str*
+
+        Search.
+
+    *   random => *bool* (default: 0)
+
+        Return records in random order.
+
+    *   result_limit => *int*
+
+        Only return a certain number of records.
+
+    *   result_start => *int* (default: 1)
+
+        Only return starting from the n'th record.
+
+    *   sort => *str*
+
+        Order records according to certain field(s).
+
+        A list of field names separated by comma. Each field can be prefixed
+        with '-' to specify descending order instead of the default
+        ascending.
+
+    *   summary => *str*
+
+        Only return records where the 'summary' field equals specified
+        value.
+
+    *   summary.contains => *str*
+
+        Only return records where the 'summary' field contains specified
+        text.
+
+    *   summary.in => *array*
+
+        Only return records where the 'summary' field is in the specified
+        values.
+
+    *   summary.is => *str*
+
+        Only return records where the 'summary' field equals specified
+        value.
+
+    *   summary.isnt => *str*
+
+        Only return records where the 'summary' field does not equal
+        specified value.
+
+    *   summary.max => *str*
+
+        Only return records where the 'summary' field is less than or equal
+        to specified value.
+
+    *   summary.min => *str*
+
+        Only return records where the 'summary' field is greater than or
+        equal to specified value.
+
+    *   summary.not_contains => *str*
+
+        Only return records where the 'summary' field does not contain
+        specified text.
+
+    *   summary.not_in => *array*
+
+        Only return records where the 'summary' field is not in the
+        specified values.
+
+    *   summary.xmax => *str*
+
+        Only return records where the 'summary' field is less than specified
+        value.
+
+    *   summary.xmin => *str*
+
+        Only return records where the 'summary' field is greater than
+        specified value.
+
+    *   with_field_names => *bool*
+
+        Return field names in each record (as hash/associative array).
+
+        When enabled, function will return each record as hash/associative
+        array (field name => value pairs). Otherwise, function will return
+        each record as list/array (field value, field value, ...).
+
+    Return value:
+
+    Returns an enveloped result (an array).
+
+    First element (status) is an integer containing HTTP status code (200
+    means OK, 4xx caller error, 5xx function error). Second element (msg) is
+    a string containing error message, or 'OK' if status is 200. Third
+    element (result) is optional, the actual result. Fourth element (meta)
+    is called result metadata and is optional, a hash that contains extra
+    information.
+
+     (any)
 
 SEE ALSO
     RFC 1893
+
+HOMEPAGE
+    Please visit the project's homepage at
+    <https://metacpan.org/release/App-smtpstatus>.
+
+SOURCE
+    Source repository is at
+    <https://github.com/sharyanto/perl-App-smtpstatus>.
+
+BUGS
+    Please report any bugs or feature requests on the bugtracker website
+    <https://rt.cpan.org/Public/Dist/Display.html?Name=App-smtpstatus>
+
+    When submitting a bug or request, please include a test-file or a patch
+    to an existing test-file that illustrates the bug or desired feature.
 
 AUTHOR
     Steven Haryanto <stevenharyanto@gmail.com>
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2013 by Steven Haryanto.
+    This software is copyright (c) 2014 by Steven Haryanto.
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.
