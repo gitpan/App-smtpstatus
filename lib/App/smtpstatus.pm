@@ -4,7 +4,7 @@ use 5.010001;
 use strict;
 use warnings;
 
-our $VERSION = '0.02'; # VERSION
+our $VERSION = '0.03'; # VERSION
 
 # from RFC 1893
 
@@ -606,7 +606,7 @@ App::smtpstatus - List SMTP statuses
 
 =head1 VERSION
 
-This document describes version 0.02 of App::smtpstatus (from Perl distribution App-smtpstatus), released on 2014-07-22.
+This document describes version 0.03 of App::smtpstatus (from Perl distribution App-smtpstatus), released on 2014-08-16.
 
 =head1 FUNCTIONS
 
