@@ -4,7 +4,7 @@ use 5.010001;
 use strict;
 use warnings;
 
-our $VERSION = '0.03'; # VERSION
+our $VERSION = '0.04'; # VERSION
 
 # from RFC 1893
 
@@ -606,7 +606,7 @@ App::smtpstatus - List SMTP statuses
 
 =head1 VERSION
 
-This document describes version 0.03 of App::smtpstatus (from Perl distribution App-smtpstatus), released on 2014-08-16.
+This document describes version 0.04 of App::smtpstatus (from Perl distribution App-smtpstatus), released on 2015-01-03.
 
 =head1 FUNCTIONS
 
@@ -629,7 +629,7 @@ Only return records where the 'code' field equals specified value.
 
 Only return records where the 'code' field contains specified text.
 
-=item * B<code.in> => I<array>
+=item * B<code.in> => I<array[str]>
 
 Only return records where the 'code' field is in the specified values.
 
@@ -653,7 +653,7 @@ Only return records where the 'code' field is greater than or equal to specified
 
 Only return records where the 'code' field does not contain specified text.
 
-=item * B<code.not_in> => I<array>
+=item * B<code.not_in> => I<array[str]>
 
 Only return records where the 'code' field is not in the specified values.
 
@@ -673,7 +673,7 @@ Only return records where the 'description' field equals specified value.
 
 Only return records where the 'description' field contains specified text.
 
-=item * B<description.in> => I<array>
+=item * B<description.in> => I<array[str]>
 
 Only return records where the 'description' field is in the specified values.
 
@@ -697,7 +697,7 @@ Only return records where the 'description' field is greater than or equal to sp
 
 Only return records where the 'description' field does not contain specified text.
 
-=item * B<description.not_in> => I<array>
+=item * B<description.not_in> => I<array[str]>
 
 Only return records where the 'description' field is not in the specified values.
 
@@ -715,7 +715,7 @@ Return array of full records instead of just ID fields.
 
 By default, only the key (ID) field is returned per result entry.
 
-=item * B<fields> => I<array>
+=item * B<fields> => I<array[str]>
 
 Select fields to return.
 
@@ -750,7 +750,7 @@ Only return records where the 'summary' field equals specified value.
 
 Only return records where the 'summary' field contains specified text.
 
-=item * B<summary.in> => I<array>
+=item * B<summary.in> => I<array[str]>
 
 Only return records where the 'summary' field is in the specified values.
 
@@ -774,7 +774,7 @@ Only return records where the 'summary' field is greater than or equal to specif
 
 Only return records where the 'summary' field does not contain specified text.
 
-=item * B<summary.not_in> => I<array>
+=item * B<summary.not_in> => I<array[str]>
 
 Only return records where the 'summary' field is not in the specified values.
 
@@ -796,8 +796,6 @@ as list/array (field value, field value, ...).
 
 =back
 
-Return value:
-
 Returns an enveloped result (an array).
 
 First element (status) is an integer containing HTTP status code
@@ -807,8 +805,7 @@ First element (status) is an integer containing HTTP status code
 element (meta) is called result metadata and is optional, a hash
 that contains extra information.
 
- (any)
-
+Return value:  (any)
 =head1 SEE ALSO
 
 RFC 1893
@@ -831,11 +828,11 @@ feature.
 
 =head1 AUTHOR
 
-Steven Haryanto <stevenharyanto@gmail.com>
+perlancar <perlancar@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Steven Haryanto.
+This software is copyright (c) 2015 by perlancar@cpan.org.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
